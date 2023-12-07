@@ -1,0 +1,11 @@
+.customersButton button{
+    font-size: 30px;
+
+}
+
+.Customer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
