@@ -1,15 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import "../style/Customer.css"
 import { addCustomerAction, removeCustomerAction } from "../store/customersReduser";
+import { fetchCustomers } from "../asyncActions/customers";
 
 export function Customer() {
     
     const dispatch=useDispatch()
     const customer=useSelector(state=>state.customers.customers)
-    const c=useSelector(state=>state.customers)
-    // console.log(customer.length)
-    console.log(c)
-
+    console.log(customer)
+   
 
     const addCustomer = () => {
       const name = prompt("Enter customer name"); // Виклик prompt() для отримання імені від користувача
@@ -35,6 +34,7 @@ export function Customer() {
       <div>Customers</div>
       <div className="customersButton">
         <button onClick={()=>addCustomer()}>add customer</button>
+        <button onClick={()=>dispatch(fetchCustomers())}>get users from server</button>
       </div>
     {customer.length>0? 
     <div>
